@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>MvnWeb</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<absolute-ordering />
+	
+	<context-param>
+		<param-name>proName</param-name>
+		<param-value>MavenWebDemo</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.maven.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>loginServlet1</servlet-name>
+		<servlet-class>com.maven.servlet.LoginServlet1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginServlet1</servlet-name>
+		<url-pattern>/login1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>logoutServlet</servlet-name>
+		<servlet-class>com.maven.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>validateUserFilter</filter-name>
+		<filter-class>com.maven.filter.ValidateUserFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>validateUserFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+</web-app>
